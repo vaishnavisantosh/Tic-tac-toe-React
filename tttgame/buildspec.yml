@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+         - echo "Present Working Directory"
+         - pwd 
+         - echo "Listing the Files"
+         - ls
+artifacts:
+    files:
+      - '**/*'
