@@ -7,7 +7,7 @@ const Board = (props) => {
     const [nxtPlayer, setNxtPlayer] = useState(true);
     const [isPlayer, setIsPlayer] = useState(true);
 
-    let nextPlayer;
+    // let nextPlayer;
 
     const handleClick = (index) => {
         const squares = [...square];
@@ -60,6 +60,9 @@ const Board = (props) => {
         setSquare(Array(9).fill(null));
           setNxtPlayer(true);
     }
+    const clicked = (e) => {
+        console.log('event is', e);
+    }
 
     let msg;
     const winner = calculateWinner(square);
@@ -85,14 +88,14 @@ const Board = (props) => {
     }
 
 
-
+    
     return (
         <>
             <div>
                 {msg}
             </div>
 
-            <div className="board-row">
+            <div onClick={clicked} className="board-row">
                 {displaySquare(0)}
                 {displaySquare(1)}
                 {displaySquare(2)}
